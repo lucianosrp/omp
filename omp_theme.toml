@@ -52,12 +52,19 @@ github_icon = ''
 type = 'prompt'
 alignment = 'left'
 
+[[blocks.segments]]
+type = "time"
+style = "plain"
+foreground = "#FFB454"
+
+[blocks.segments.properties]
+time_format = "15:04:05"
 
 [[blocks.segments]]
 type = "python"
 style = "plain"
-foreground = "#FFB454"
-template = "  {{ .Full }} "
+foreground = "#AAD94C"
+template = "(.{{ .Minor }} {{ .Venv }})"
 
 [[blocks.segments]]
 type = 'executiontime'
