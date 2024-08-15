@@ -67,6 +67,12 @@ foreground = "#AAD94C"
 template = "(.{{ .Minor }} {{ .Venv }})"
 
 [[blocks.segments]]
+type = "rust"
+style = "plain"
+foreground = "#193549"
+template = "(  {{ .Full }} )"
+
+[[blocks.segments]]
 type = 'executiontime'
 style = 'plain'
 foreground = '#A3BE8C'
