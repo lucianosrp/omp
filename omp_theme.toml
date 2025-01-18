@@ -73,13 +73,13 @@ foreground = "#193549"
 template = "(  {{ .Full }} )"
 
 [[blocks.segments]]
-type = "other"
+type = "custom"
 style = "plain"
 foreground = "#00FF00"
-template = "  {{ output }}"
+template = " {{ output }}"
 
 [blocks.segments.properties]
-command = 'FAN_SPEED=$(cat /sys/devices/platform/cooling_fan/hwmon/hwmon2/fan1_input 2>/dev/null); if [ -n "$FAN_SPEED" ]; then echo "$FAN_SPEED RPM"; else echo ""; fi|| echo '
+command = '''bash -c 'FAN_SPEED=$(cat /sys/devices/platform/cooling_fan/hwmon/hwmon2/fan1_input 2>/dev/null); if [ -n "$FAN_SPEED" ]; then echo "$FAN_SPEED RPM"; else echo ""; fi' '''
 interval = 4
 
 [[blocks.segments]]
