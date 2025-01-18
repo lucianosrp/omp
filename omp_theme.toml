@@ -73,6 +73,16 @@ foreground = "#193549"
 template = "(  {{ .Full }} )"
 
 [[blocks.segments]]
+type = "other"
+style = "plain"
+foreground = "#00FF00"
+template = "  {{ output }}"
+
+[blocks.segments.properties]
+command = 'FAN_SPEED=$(cat /sys/devices/platform/cooling_fan/hwmon/hwmon2/fan1_input 2>/dev/null); if [ -n "$FAN_SPEED" ]; then echo "$FAN_SPEED RPM"; else echo ""; fi|| echo '
+interval = 4
+
+[[blocks.segments]]
 type = 'executiontime'
 style = 'plain'
 foreground = '#A3BE8C'
